@@ -91,7 +91,10 @@ export default function Header() {
           className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-6 ml-0 md:ml-[600px] relative z-10 mt-24 md:mt-0 w-full md:w-auto md:min-w-[500px] md:max-w-none md:pr-8"
           style={{ 
             opacity: logoOpacity,
-            transition: 'opacity 0.3s ease-out'
+            transition: 'opacity 0.3s ease-out',
+            ...(isDesktop && {
+              transform: 'translateX(1in) translateY(-1in)'
+            })
           }}
         >
           {/* Tagline */}
