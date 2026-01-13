@@ -107,7 +107,7 @@ export default function Header() {
             className="md:mx-auto"
             style={{
               ...(isDesktop && {
-                transform: 'translateX(-1in)'
+                transform: 'translateX(0)'
               })
             }}
           >
