@@ -59,7 +59,7 @@ export default function Header() {
       </div>
       
       {/* Logo and content container */}
-      <div className="relative h-full flex items-center justify-between w-full px-4 md:px-8" style={{ zIndex: 100 }}>
+      <div className="relative h-full flex flex-col md:flex-row items-center md:items-center md:justify-between w-full px-4 md:px-8" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
           className="relative w-48 h-48 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center flex-shrink-0"
@@ -88,14 +88,14 @@ export default function Header() {
 
         {/* Slogan and CTA Button - positioned to the right with proper spacing */}
         <div 
-          className="flex flex-col items-end justify-center gap-2 md:gap-4 ml-2 md:ml-8 relative z-10 flex-1 min-w-0 mt-24 md:mt-0"
+          className="flex flex-col items-center md:items-end justify-center gap-2 md:gap-4 ml-0 md:ml-8 relative z-10 flex-1 min-w-0 mt-24 md:mt-0 w-full md:w-auto"
           style={{ 
             opacity: logoOpacity,
             transition: 'opacity 0.3s ease-out'
           }}
         >
           {/* Tagline */}
-          <p className="text-sm md:text-2xl lg:text-3xl font-light text-space-light text-right">
+          <p className="text-sm md:text-2xl lg:text-3xl font-light text-space-light text-center md:text-right">
             Launching Brands Into Their Next Phase
           </p>
 
@@ -109,7 +109,7 @@ export default function Header() {
           </button>
 
           {/* Supporting text - shown on all screen sizes */}
-          <p className="text-xs md:text-base text-gray-300 text-right max-w-md">
+          <p className="text-xs md:text-base text-gray-300 text-center md:text-right max-w-md md:max-w-2xl lg:max-w-3xl">
             Join our team and help growing brands connect with their audiences through clear, professional, and sustainable marketing strategies.
           </p>
         </div>
