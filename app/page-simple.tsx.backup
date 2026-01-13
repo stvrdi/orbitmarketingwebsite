@@ -1,0 +1,9 @@
+// Temporary simplified page for testing
+export default function HomeSimple() {
+  return (
+    <div className="min-h-screen bg-space-dark text-white p-8">
+      <h1 className="text-4xl font-bold">Orbit Marketing, Inc.</h1>
+      <p className="text-xl mt-4">Launching Brands Into Their Next Phase</p>
+    </div>
+  );
+}
