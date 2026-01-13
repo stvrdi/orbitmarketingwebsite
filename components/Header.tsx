@@ -11,6 +11,8 @@ export default function Header() {
   const dragStart = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    if (typeof window === 'undefined') return () => {};
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -26,12 +28,15 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial call
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const logoOpacity = 1 - scrollProgress;
 
   const scrollToForm = () => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
     const form = document.getElementById("application-form");
     form?.scrollIntoView({ behavior: "smooth" });
   };
@@ -53,6 +58,8 @@ export default function Header() {
   };
 
   useEffect(() => {
+    if (typeof window === 'undefined') return () => {};
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (isDragging.current && logoRef.current) {
         e.preventDefault();

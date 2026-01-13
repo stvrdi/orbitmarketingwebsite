@@ -6,6 +6,8 @@ export default function Hero() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return () => {};
+    
     const handleScroll = () => {
       const heroSection = document.getElementById("hero-section");
       if (!heroSection) return;
@@ -30,7 +32,9 @@ export default function Hero() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial call
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
 

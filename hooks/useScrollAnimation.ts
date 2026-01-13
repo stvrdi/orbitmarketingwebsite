@@ -8,8 +8,10 @@ export function useScrollAnimation(threshold: number = 0.1) {
   const elementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return () => {};
+    
     const element = elementRef.current;
-    if (!element) return;
+    if (!element) return () => {};
 
     const handleScroll = () => {
       const rect = element.getBoundingClientRect();
@@ -67,7 +69,9 @@ export function useScrollAnimation(threshold: number = 0.1) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial call
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [threshold]);
 
   return { isVisible, scrollProgress, elementRef };

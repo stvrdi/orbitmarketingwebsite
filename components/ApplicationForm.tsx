@@ -78,8 +78,10 @@ export default function ApplicationForm() {
           resume: null,
         });
         // Reset file input
-        const fileInput = document.getElementById("resume") as HTMLInputElement;
-        if (fileInput) fileInput.value = "";
+        if (typeof document !== 'undefined') {
+          const fileInput = document.getElementById("resume") as HTMLInputElement;
+          if (fileInput) fileInput.value = "";
+        }
       } else {
         setSubmitStatus({
           type: "error",
