@@ -86,9 +86,9 @@ export default function Header() {
           />
         </div>
 
-        {/* Slogan and CTA Button - positioned to the right with proper spacing */}
+        {/* Slogan and CTA Button - positioned to the left with proper spacing */}
         <div 
-          className="flex flex-col items-center md:items-end justify-center gap-2 md:gap-4 ml-0 md:ml-8 relative z-10 flex-1 mt-24 md:mt-0 w-full md:w-auto md:max-w-none md:flex-shrink"
+          className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-4 ml-0 md:ml-8 relative z-10 flex-1 mt-24 md:mt-0 w-full md:w-auto md:max-w-none md:flex-shrink"
           style={{ 
             opacity: logoOpacity,
             transition: 'opacity 0.3s ease-out',
@@ -96,7 +96,7 @@ export default function Header() {
           }}
         >
           {/* Tagline */}
-          <p className="text-sm md:text-2xl lg:text-3xl font-light text-space-light text-center md:text-right md:w-full">
+          <p className="text-sm md:text-2xl lg:text-3xl font-light text-space-light text-center md:text-left md:w-full">
             Launching Brands Into Their Next Phase
           </p>
 
@@ -110,7 +110,7 @@ export default function Header() {
           </button>
 
           {/* Supporting text - shown on all screen sizes */}
-          <p className="text-xs md:text-base text-gray-300 text-center md:text-right max-w-md md:max-w-none md:w-full">
+          <p className="text-xs md:text-base text-gray-300 text-center md:text-left max-w-md md:max-w-none md:w-full">
             Join our team and help growing brands connect with their audiences through clear, professional, and sustainable marketing strategies.
           </p>
         </div>
