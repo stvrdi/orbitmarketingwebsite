@@ -59,10 +59,10 @@ export default function Header() {
       </div>
       
       {/* Logo and content container */}
-      <div className="relative h-full flex flex-col md:flex-row items-center md:items-center md:justify-between w-full px-4 md:px-8 md:pr-16" style={{ zIndex: 100 }}>
+      <div className="relative h-full flex flex-col md:flex-row items-center md:items-center w-full px-4 md:px-8" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
-          className="relative w-96 h-96 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center flex-shrink-0"
+          className="relative w-96 h-96 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center flex-shrink-0 md:absolute md:left-0"
           style={{ 
             opacity: logoOpacity,
             transform: isDesktop 
@@ -88,11 +88,10 @@ export default function Header() {
 
         {/* Slogan and CTA Button - positioned to the left with proper spacing */}
         <div 
-          className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-4 ml-0 md:ml-8 relative z-10 flex-1 mt-24 md:mt-0 w-full md:w-auto md:max-w-none md:flex-shrink"
+          className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-4 ml-0 relative z-10 mt-24 md:mt-0 w-full md:w-auto md:max-w-2xl md:absolute md:left-8 md:top-1/2 md:-translate-y-1/2"
           style={{ 
             opacity: logoOpacity,
-            transition: 'opacity 0.3s ease-out',
-            minWidth: isDesktop ? '400px' : 'auto'
+            transition: 'opacity 0.3s ease-out'
           }}
         >
           {/* Tagline */}
