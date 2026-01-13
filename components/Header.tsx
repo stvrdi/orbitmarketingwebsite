@@ -62,12 +62,12 @@ export default function Header() {
       <div className="relative h-full flex flex-col md:flex-row items-center md:items-center w-full px-4 md:px-8 md:pr-16" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
-          className="relative w-64 h-64 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center md:absolute md:left-0"
+          className="relative w-80 h-80 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center mx-auto md:absolute md:left-0 md:mx-0"
           style={{ 
             opacity: logoOpacity,
             transform: isDesktop 
               ? 'rotate(-30deg) translateX(-3in) translateY(2in)' 
-              : 'rotate(-30deg) translateY(-2rem)',
+              : 'rotate(-30deg)',
             transition: 'opacity 0.3s ease-out'
           }}
         >
