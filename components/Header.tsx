@@ -62,7 +62,7 @@ export default function Header() {
       <div className="relative h-full flex flex-col md:flex-row items-center md:items-center md:justify-between w-full px-4 md:px-8" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
-          className="relative w-48 h-48 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center flex-shrink-0"
+          className="relative w-96 h-96 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center flex-shrink-0"
           style={{ 
             opacity: logoOpacity,
             transform: isDesktop 
@@ -109,7 +109,7 @@ export default function Header() {
           </button>
 
           {/* Supporting text - shown on all screen sizes */}
-          <p className="text-xs md:text-base text-gray-300 text-center md:text-right max-w-md md:max-w-2xl lg:max-w-3xl">
+          <p className="text-xs md:text-base text-gray-300 text-center md:text-right max-w-md md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
             Join our team and help growing brands connect with their audiences through clear, professional, and sustainable marketing strategies.
           </p>
         </div>
