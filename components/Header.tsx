@@ -62,7 +62,7 @@ export default function Header() {
       <div className="relative h-full flex flex-col md:flex-row items-center md:items-center w-full px-4 md:px-8 md:pr-16" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
-          className="relative w-96 h-96 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center flex-shrink-0"
+          className="relative w-96 h-96 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center md:absolute md:left-0"
           style={{ 
             opacity: logoOpacity,
             transform: isDesktop 
@@ -88,7 +88,7 @@ export default function Header() {
 
         {/* Slogan and CTA Button - positioned to the right of logo with proper spacing */}
         <div 
-          className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-6 ml-0 md:ml-16 relative z-10 flex-1 mt-24 md:mt-0 w-full md:w-auto md:max-w-none md:pr-8"
+          className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-6 ml-0 md:ml-[600px] relative z-10 mt-24 md:mt-0 w-full md:w-auto md:min-w-[500px] md:max-w-none md:pr-8"
           style={{ 
             opacity: logoOpacity,
             transition: 'opacity 0.3s ease-out'
@@ -109,7 +109,7 @@ export default function Header() {
           </button>
 
           {/* Supporting text - shown on all screen sizes */}
-          <p className="text-xs md:text-base lg:text-lg text-gray-300 text-center md:text-left md:leading-relaxed md:max-w-2xl">
+          <p className="text-xs md:text-base lg:text-lg text-gray-300 text-center md:text-left md:leading-relaxed">
             Join our team and help growing brands connect with their audiences through clear, professional, and sustainable marketing strategies.
           </p>
         </div>
