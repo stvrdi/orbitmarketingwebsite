@@ -103,13 +103,22 @@ export default function Header() {
           </p>
 
           {/* CTA Button */}
-          <button
-            onClick={scrollToForm}
-            className="px-4 py-2 md:px-8 md:py-4 bg-gradient-to-r from-space-accent to-space-purple text-white font-semibold rounded-lg text-xs md:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-space-accent/50 whitespace-nowrap md:mx-auto"
-            aria-label="Get started with your application"
+          <div 
+            className="md:mx-auto"
+            style={{
+              ...(isDesktop && {
+                transform: 'translateX(-2in)'
+              })
+            }}
           >
-            Get Started
-          </button>
+            <button
+              onClick={scrollToForm}
+              className="px-4 py-2 md:px-8 md:py-4 bg-gradient-to-r from-space-accent to-space-purple text-white font-semibold rounded-lg text-xs md:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-space-accent/50 whitespace-nowrap"
+              aria-label="Get started with your application"
+            >
+              Get Started
+            </button>
+          </div>
 
           {/* Supporting text - shown on all screen sizes */}
           <p className="text-xs md:text-base lg:text-lg text-gray-300 text-center md:text-left md:leading-relaxed">
