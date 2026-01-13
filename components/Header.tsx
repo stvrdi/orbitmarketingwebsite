@@ -88,7 +88,7 @@ export default function Header() {
 
         {/* Slogan and CTA Button - positioned to the right of logo with proper spacing */}
         <div 
-          className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-4 ml-0 md:ml-8 relative z-10 flex-1 mt-24 md:mt-0 w-full md:w-auto md:max-w-xl lg:max-w-2xl"
+          className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-4 ml-0 md:ml-16 relative z-10 flex-1 mt-24 md:mt-0 w-full md:w-auto md:max-w-3xl lg:max-w-4xl xl:max-w-5xl"
           style={{ 
             opacity: logoOpacity,
             transition: 'opacity 0.3s ease-out'
