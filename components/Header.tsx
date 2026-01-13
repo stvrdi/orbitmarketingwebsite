@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function Header() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return () => {};
@@ -20,11 +21,18 @@ export default function Header() {
       setScrollProgress(progress);
     };
 
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
     handleScroll(); // Initial call
+    handleResize(); // Initial call
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -54,10 +62,12 @@ export default function Header() {
       <div className="relative h-full flex items-center justify-between w-full px-4 md:px-8" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
-          className="relative w-32 h-32 md:w-[720px] md:h-[720px] lg:w-[864px] lg:h-[864px] flex items-center justify-center flex-shrink-0"
+          className="relative w-48 h-48 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center flex-shrink-0"
           style={{ 
             opacity: logoOpacity,
-            transform: 'rotate(-30deg)',
+            transform: isDesktop 
+              ? 'rotate(-30deg) translateX(-1in) translateY(2in)' 
+              : 'rotate(-30deg)',
             transition: 'opacity 0.3s ease-out'
           }}
         >
@@ -78,7 +88,7 @@ export default function Header() {
 
         {/* Slogan and CTA Button - positioned to the right with proper spacing */}
         <div 
-          className="flex flex-col items-end justify-center gap-2 md:gap-4 ml-2 md:ml-8 relative z-10 flex-1 min-w-0"
+          className="flex flex-col items-end justify-center gap-2 md:gap-4 ml-2 md:ml-8 relative z-10 flex-1 min-w-0 mt-24 md:mt-0"
           style={{ 
             opacity: logoOpacity,
             transition: 'opacity 0.3s ease-out'
