@@ -62,7 +62,7 @@ export default function Header() {
       <div className="relative h-full flex flex-col md:flex-row items-center md:items-center w-full px-4 md:px-8 md:pr-16" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
-          className="relative w-96 h-96 md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center md:absolute md:left-0"
+          className="relative w-[1152px] h-[1152px] md:w-[960px] md:h-[960px] lg:w-[1152px] lg:h-[1152px] flex items-center justify-center md:absolute md:left-0"
           style={{ 
             opacity: logoOpacity,
             transform: isDesktop 
@@ -105,7 +105,7 @@ export default function Header() {
           {/* CTA Button */}
           <button
             onClick={scrollToForm}
-            className="px-4 py-2 md:px-8 md:py-4 bg-gradient-to-r from-space-accent to-space-purple text-white font-semibold rounded-lg text-xs md:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-space-accent/50 whitespace-nowrap"
+            className="px-4 py-2 md:px-8 md:py-4 bg-gradient-to-r from-space-accent to-space-purple text-white font-semibold rounded-lg text-xs md:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-space-accent/50 whitespace-nowrap md:mx-auto"
             aria-label="Get started with your application"
           >
             Get Started
