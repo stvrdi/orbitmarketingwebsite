@@ -66,7 +66,7 @@ export default function Header() {
           style={{ 
             opacity: logoOpacity,
             transform: isDesktop 
-              ? 'rotate(-30deg) translateX(-1in) translateY(2in)' 
+              ? 'rotate(-30deg) translateX(-3in) translateY(2in)' 
               : 'rotate(-30deg)',
             transition: 'opacity 0.3s ease-out'
           }}
