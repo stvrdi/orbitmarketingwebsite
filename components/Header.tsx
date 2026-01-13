@@ -54,7 +54,7 @@ export default function Header() {
       <div className="relative h-full flex items-center justify-between w-full px-4 md:px-8" style={{ zIndex: 100 }}>
         {/* Logo positioned in top left, centered vertically - FIXED POSITION */}
         <div 
-          className="relative w-32 h-32 md:w-[504px] md:h-[504px] lg:w-[576px] lg:h-[576px] flex items-center justify-center flex-shrink-0"
+          className="relative w-32 h-32 md:w-[720px] md:h-[720px] lg:w-[864px] lg:h-[864px] flex items-center justify-center flex-shrink-0"
           style={{ 
             opacity: logoOpacity,
             transform: 'rotate(-30deg)',
@@ -98,8 +98,8 @@ export default function Header() {
             Get Started
           </button>
 
-          {/* Supporting text - hidden on mobile, shown on desktop */}
-          <p className="hidden md:block text-sm md:text-base text-gray-300 text-right max-w-md">
+          {/* Supporting text - shown on all screen sizes */}
+          <p className="text-xs md:text-base text-gray-300 text-right max-w-md">
             Join our team and help growing brands connect with their audiences through clear, professional, and sustainable marketing strategies.
           </p>
         </div>
