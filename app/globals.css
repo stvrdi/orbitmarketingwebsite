@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Space-themed starry background with dynamic movement */
+@layer base {
+  body {
+    @apply bg-space-dark text-white;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Multiple starfield layers for depth and parallax effect */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: 
+      /* Far stars - small, slow moving */
+      radial-gradient(1px 1px at 50px 50px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(1px 1px at 150px 150px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 250px 250px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 350px 350px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 450px 450px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(1px 1px at 550px 550px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 650px 650px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 750px 750px, rgba(255,255,255,0.6), transparent),
+      /* Medium stars */
+      radial-gradient(1.5px 1.5px at 100px 100px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1.5px 1.5px at 200px 200px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1.5px 1.5px at 300px 300px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(1.5px 1.5px at 400px 400px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1.5px 1.5px at 500px 500px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1.5px 1.5px at 600px 600px, rgba(255,255,255,0.7), transparent),
+      /* Bright stars */
+      radial-gradient(2px 2px at 75px 75px, rgba(255,255,255,1), transparent),
+      radial-gradient(2px 2px at 175px 175px, rgba(200,220,255,0.9), transparent),
+      radial-gradient(2px 2px at 275px 275px, rgba(255,255,255,1), transparent),
+      radial-gradient(2px 2px at 375px 375px, rgba(200,220,255,0.9), transparent),
+      radial-gradient(2px 2px at 475px 475px, rgba(255,255,255,1), transparent),
+      radial-gradient(2px 2px at 575px 575px, rgba(200,220,255,0.9), transparent),
+      radial-gradient(2px 2px at 675px 675px, rgba(255,255,255,1), transparent);
+    background-size: 800px 800px, 600px 600px, 400px 400px;
+    background-position: 0 0, 200px 200px, 100px 100px;
+    animation: starfield-drift 60s linear infinite, starfield-twinkle 8s ease-in-out infinite;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: 
+      /* Additional star layer for more depth */
+      radial-gradient(1px 1px at 25px 25px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 125px 125px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 225px 225px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 325px 325px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 425px 425px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 525px 525px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 625px 625px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 725px 725px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 50px 50px, rgba(180,200,255,0.8), transparent),
+      radial-gradient(2px 2px at 150px 150px, rgba(200,220,255,0.7), transparent),
+      radial-gradient(2px 2px at 250px 250px, rgba(180,200,255,0.9), transparent),
+      radial-gradient(2px 2px at 350px 350px, rgba(200,220,255,0.6), transparent);
+    background-size: 700px 700px, 500px 500px;
+    background-position: 150px 150px, 50px 50px;
+    animation: starfield-drift-reverse 80s linear infinite, starfield-twinkle-delayed 10s ease-in-out infinite;
+    opacity: 0.7;
+  }
+
+  /* Nebula-like gradient overlay that shifts */
+  @keyframes nebula-shift {
+    0%, 100% {
+      background-position: 0% 0%, 100% 100%;
+    }
+    50% {
+      background-position: 100% 100%, 0% 0%;
+    }
+  }
+
+  @keyframes starfield-drift {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-800px, -800px);
+    }
+  }
+
+  @keyframes starfield-drift-reverse {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(700px, 700px);
+    }
+  }
+
+  @keyframes starfield-twinkle {
+    0%, 100% {
+      opacity: 1;
+      filter: brightness(1);
+    }
+    25% {
+      opacity: 0.7;
+      filter: brightness(0.8);
+    }
+    50% {
+      opacity: 0.9;
+      filter: brightness(1.1);
+    }
+    75% {
+      opacity: 0.6;
+      filter: brightness(0.7);
+    }
+  }
+
+  @keyframes starfield-twinkle-delayed {
+    0%, 100% {
+      opacity: 0.7;
+      filter: brightness(0.9);
+    }
+    33% {
+      opacity: 0.5;
+      filter: brightness(0.7);
+    }
+    66% {
+      opacity: 0.8;
+      filter: brightness(1);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Screen reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  /* Fix for gradient text clipping */
+  .gradient-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    line-height: 1.3;
+    padding-bottom: 0.2em;
+  }
+
+  /* Animated floating stars */
+  @keyframes star-float-1 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.8;
+    }
+    25% {
+      transform: translate(30px, -40px) scale(1.2);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(60px, -20px) scale(0.9);
+      opacity: 0.6;
+    }
+    75% {
+      transform: translate(40px, -50px) scale(1.1);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes star-float-2 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.7;
+    }
+    33% {
+      transform: translate(-25px, 35px) scale(1.3);
+      opacity: 1;
+    }
+    66% {
+      transform: translate(-50px, 20px) scale(0.8);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes star-float-3 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.9;
+    }
+    20% {
+      transform: translate(20px, 30px) scale(1.1);
+      opacity: 0.7;
+    }
+    40% {
+      transform: translate(40px, 10px) scale(0.9);
+      opacity: 1;
+    }
+    60% {
+      transform: translate(30px, 40px) scale(1.2);
+      opacity: 0.8;
+    }
+    80% {
+      transform: translate(10px, 25px) scale(1);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes star-float-4 {
+    0%, 100% {
+      transform: translate(0, 0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(-20px, -30px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes star-float-5 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.8;
+    }
+    25% {
+      transform: translate(35px, -25px) scale(1.2);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(70px, -10px) scale(0.9);
+      opacity: 0.6;
+    }
+    75% {
+      transform: translate(50px, -35px) scale(1.1);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes star-float-6 {
+    0%, 100% {
+      transform: translate(0, 0);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate(25px, 30px);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes star-float-7 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.9;
+    }
+    30% {
+      transform: translate(-30px, 25px) scale(1.3);
+      opacity: 1;
+    }
+    60% {
+      transform: translate(-60px, 15px) scale(0.8);
+      opacity: 0.7;
+    }
+  }
+
+  /* Shooting star animations */
+  @keyframes shooting-star-1 {
+    0% {
+      transform: translateX(-100px) translateY(-100px) rotate(45deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px)) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shooting-star-2 {
+    0% {
+      transform: translateX(100px) translateY(-100px) rotate(-45deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(calc(-100vw - 100px)) translateY(calc(100vh + 100px)) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-star-float-1 {
+    animation: star-float-1 15s ease-in-out infinite;
+  }
+
+  .animate-star-float-2 {
+    animation: star-float-2 18s ease-in-out infinite;
+  }
+
+  .animate-star-float-3 {
+    animation: star-float-3 20s ease-in-out infinite;
+  }
+
+  .animate-star-float-4 {
+    animation: star-float-4 12s ease-in-out infinite;
+  }
+
+  .animate-star-float-5 {
+    animation: star-float-5 16s ease-in-out infinite;
+  }
+
+  .animate-star-float-6 {
+    animation: star-float-6 14s ease-in-out infinite;
+  }
+
+  .animate-star-float-7 {
+    animation: star-float-7 19s ease-in-out infinite;
+  }
+
+  .animate-shooting-star-1 {
+    animation: shooting-star-1 8s linear infinite;
+    animation-delay: 0s;
+  }
+
+  .animate-shooting-star-2 {
+    animation: shooting-star-2 10s linear infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-nebula-shift {
+    animation: nebula-shift 25s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
