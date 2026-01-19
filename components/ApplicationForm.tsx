@@ -160,7 +160,7 @@ export default function ApplicationForm() {
               value={formData.phone}
               onChange={handleInputChange}
               className="w-full px-4 py-3 bg-space-dark/50 border border-space-accent/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-space-accent focus:border-transparent"
-              placeholder="(555) 123-4567"
+              placeholder="864-334-6455"
             />
           </div>
 

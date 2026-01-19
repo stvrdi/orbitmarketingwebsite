@@ -23,7 +23,7 @@ export default function Footer() {
                 <span className="font-medium">Location:</span> Greenville, South Carolina
               </li>
               <li>
-                <span className="font-medium">Phone:</span> Placeholder
+                <span className="font-medium">Phone:</span> 864-334-6455
               </li>
               <li>
                 <span className="font-medium">Email:</span>{" "}
