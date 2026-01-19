@@ -58,7 +58,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "Recruitment",
-                email: "placeholder@placeholder.com",
+                email: "contact@orbitmarketinginc.org",
               },
             }),
           }}

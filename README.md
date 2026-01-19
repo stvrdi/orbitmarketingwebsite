@@ -155,4 +155,4 @@ Copyright © 2024 Orbit Marketing, Inc. All rights reserved.
 
 ## 🆘 Support
 
-For questions or issues, contact: placeholder@placeholder.com
+For questions or issues, contact: contact@orbitmarketinginc.org

@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
     // Example email structure:
     /*
     const emailContent = {
-      to: "placeholder@placeholder.com",
+      to: "contact@orbitmarketinginc.org",
       subject: `New Application from ${fullName}`,
       text: `
         New Application Received:

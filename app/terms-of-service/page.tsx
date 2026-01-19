@@ -171,10 +171,10 @@ export default function TermsOfService() {
             <p className="mt-2">
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:placeholder@placeholder.com"
+                href="mailto:contact@orbitmarketinginc.org"
                 className="text-space-accent hover:underline"
               >
-                placeholder@placeholder.com
+                contact@orbitmarketinginc.org
               </a>
               <br />
               <strong>Location:</strong> Greenville, South Carolina

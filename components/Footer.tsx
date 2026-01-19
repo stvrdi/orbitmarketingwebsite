@@ -28,10 +28,10 @@ export default function Footer() {
               <li>
                 <span className="font-medium">Email:</span>{" "}
                 <a
-                  href="mailto:placeholder@placeholder.com"
+                  href="mailto:contact@orbitmarketinginc.org"
                   className="text-space-accent hover:underline"
                 >
-                  placeholder@placeholder.com
+                  contact@orbitmarketinginc.org
                 </a>
               </li>
             </ul>
