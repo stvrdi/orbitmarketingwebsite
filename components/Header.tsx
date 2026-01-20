@@ -45,7 +45,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-48 md:h-[448px] overflow-visible border-0 bg-transparent">
+    <header className="fixed top-0 left-0 right-0 z-50 h-48 md:h-[448px] overflow-visible border-0 bg-transparent pointer-events-none">
       {/* Starry background overlay - fully transparent */}
       {/* <div className="absolute inset-0 bg-space-dark/50 backdrop-blur-sm pointer-events-none"></div> */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-space-purple/10 via-transparent to-transparent pointer-events-none"></div> */}
@@ -104,7 +104,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div 
-            className="md:mx-auto"
+            className="md:mx-auto pointer-events-auto"
             style={{
               ...(isDesktop && {
                 transform: 'translateX(0)'
